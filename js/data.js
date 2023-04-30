@@ -57,7 +57,7 @@ function getComment() {
   commentsIds.push(id);
   return {
     id,
-    avatar: `img/avatar-${getRandomNumber(1, 6)}`,
+    avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
     message: messages[getRandomNumber(0, messages.length - 1)],
     name: authors[getRandomNumber(0, authors.length - 1)],
   };
