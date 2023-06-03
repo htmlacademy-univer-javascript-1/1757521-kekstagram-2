@@ -1,9 +1,11 @@
-import {isEscapeKey} from './util.js';
+import {isEscapeKey, checkFokus} from './util.js';
 
 const uploadImageField = document.querySelector('#upload-file');
 const userFormOverlayElement = document.querySelector('.img-upload__overlay');
 const userFormElement = document.querySelector('#upload-select-image');
 const closeFormButton = document.querySelector('#upload-cancel');
+const hashtagsInput = document.querySelector('.text__hashtags');
+const commentInput = document.querySelector('.text__description');
 
 
 const onFormUploadImage = () => {
@@ -15,7 +17,7 @@ const onFormClickCloseButton = () => {
 };
 
 const onFormEscKeyDown = (evt) => {
-  if (isEscapeKey(evt)) {
+  if (isEscapeKey(evt) && !checkFokus(hashtagsInput) && !checkFokus(commentInput)) {
     closeUserForm();
   }
 };
