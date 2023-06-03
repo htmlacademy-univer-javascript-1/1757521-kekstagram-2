@@ -1,5 +1,5 @@
 import {getPhotoDescriptions} from './data.js';
-import {loadPicture} from './big-picture.js';
+import {openModal} from './picture-modal.js';
 
 const miniatureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const photos = getPhotoDescriptions();
@@ -14,7 +14,7 @@ photos.forEach(({url,description, likes, comments}) => {
   miniature.querySelector('.picture__likes').innerText = likes;
   miniature.addEventListener('click', (event) => {
     event.preventDefault();
-    loadPicture(url, description, likes, comments);
+    openModal(url, description, likes, comments);
   });
   miniaturesList.append(miniature);
 });

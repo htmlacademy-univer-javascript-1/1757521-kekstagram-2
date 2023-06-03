@@ -24,4 +24,10 @@ function checkStringLength(string = '', maxLength = 0) {
   return string.length <= maxLength;
 }
 
-export {getRandomNumber, checkStringLength};
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+const hasDuplicates = (arr) => new Set(arr).size !== arr.length;
+
+const checkFokus = (el) => el === document.querySelector(':focus');
+
+export {getRandomNumber, checkStringLength, isEscapeKey, hasDuplicates, checkFokus};
